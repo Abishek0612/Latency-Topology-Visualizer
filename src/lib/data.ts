@@ -1,0 +1,210 @@
+import { ExchangeServer, CloudRegion } from "../types";
+
+export const exchangeServers: ExchangeServer[] = [
+  {
+    id: "okx-tokyo",
+    name: "OKX",
+    location: { city: "Tokyo", country: "Japan", lat: 35.6762, lon: 139.6503 },
+    cloudProvider: "AWS",
+    region: "ap-northeast-1",
+  },
+  {
+    id: "deribit-amsterdam",
+    name: "Deribit",
+    location: {
+      city: "Amsterdam",
+      country: "Netherlands",
+      lat: 52.3676,
+      lon: 4.9041,
+    },
+    cloudProvider: "GCP",
+    region: "europe-west4",
+  },
+  {
+    id: "bybit-singapore",
+    name: "Bybit",
+    location: {
+      city: "Singapore",
+      country: "Singapore",
+      lat: 1.3521,
+      lon: 103.8198,
+    },
+    cloudProvider: "AWS",
+    region: "ap-southeast-1",
+  },
+  {
+    id: "binance-tokyo",
+    name: "Binance",
+    location: { city: "Tokyo", country: "Japan", lat: 35.6762, lon: 139.6503 },
+    cloudProvider: "AWS",
+    region: "ap-northeast-1",
+  },
+  {
+    id: "binance-frankfurt",
+    name: "Binance",
+    location: {
+      city: "Frankfurt",
+      country: "Germany",
+      lat: 50.1109,
+      lon: 8.6821,
+    },
+    cloudProvider: "Azure",
+    region: "germanywestcentral",
+  },
+  {
+    id: "coinbase-us-east",
+    name: "Coinbase",
+    location: { city: "Virginia", country: "USA", lat: 37.4316, lon: -78.6569 },
+    cloudProvider: "AWS",
+    region: "us-east-1",
+  },
+  {
+    id: "kraken-us-west",
+    name: "Kraken",
+    location: { city: "Oregon", country: "USA", lat: 43.8041, lon: -120.5542 },
+    cloudProvider: "GCP",
+    region: "us-west1",
+  },
+  {
+    id: "bitfinex-london",
+    name: "Bitfinex",
+    location: { city: "London", country: "UK", lat: 51.5074, lon: -0.1278 },
+    cloudProvider: "Azure",
+    region: "uksouth",
+  },
+  {
+    id: "huobi-singapore",
+    name: "Huobi",
+    location: {
+      city: "Singapore",
+      country: "Singapore",
+      lat: 1.3521,
+      lon: 103.8198,
+    },
+    cloudProvider: "AWS",
+    region: "ap-southeast-1",
+  },
+  {
+    id: "kucoin-sydney",
+    name: "KuCoin",
+    location: {
+      city: "Sydney",
+      country: "Australia",
+      lat: -33.8688,
+      lon: 151.2093,
+    },
+    cloudProvider: "GCP",
+    region: "australia-southeast1",
+  },
+  {
+    id: "gate-seoul",
+    name: "Gate.io",
+    location: {
+      city: "Seoul",
+      country: "South Korea",
+      lat: 37.5665,
+      lon: 126.978,
+    },
+    cloudProvider: "Azure",
+    region: "koreacentral",
+  },
+  {
+    id: "mexc-hongkong",
+    name: "MEXC",
+    location: {
+      city: "Hong Kong",
+      country: "Hong Kong",
+      lat: 22.3193,
+      lon: 114.1694,
+    },
+    cloudProvider: "AWS",
+    region: "ap-east-1",
+  },
+];
+
+export const cloudRegions: CloudRegion[] = [
+  {
+    id: "aws-us-east-1",
+    provider: "AWS",
+    name: "US East (Virginia)",
+    code: "us-east-1",
+    location: { lat: 37.4316, lon: -78.6569 },
+    serverCount: 15,
+  },
+  {
+    id: "aws-ap-northeast-1",
+    provider: "AWS",
+    name: "Asia Pacific (Tokyo)",
+    code: "ap-northeast-1",
+    location: { lat: 35.6762, lon: 139.6503 },
+    serverCount: 22,
+  },
+  {
+    id: "aws-ap-southeast-1",
+    provider: "AWS",
+    name: "Asia Pacific (Singapore)",
+    code: "ap-southeast-1",
+    location: { lat: 1.3521, lon: 103.8198 },
+    serverCount: 18,
+  },
+  {
+    id: "gcp-europe-west4",
+    provider: "GCP",
+    name: "Europe West (Netherlands)",
+    code: "europe-west4",
+    location: { lat: 52.3676, lon: 4.9041 },
+    serverCount: 12,
+  },
+  {
+    id: "gcp-us-west1",
+    provider: "GCP",
+    name: "US West (Oregon)",
+    code: "us-west1",
+    location: { lat: 43.8041, lon: -120.5542 },
+    serverCount: 10,
+  },
+  {
+    id: "gcp-australia-southeast1",
+    provider: "GCP",
+    name: "Australia (Sydney)",
+    code: "australia-southeast1",
+    location: { lat: -33.8688, lon: 151.2093 },
+    serverCount: 8,
+  },
+  {
+    id: "azure-germanywestcentral",
+    provider: "Azure",
+    name: "Germany West Central",
+    code: "germanywestcentral",
+    location: { lat: 50.1109, lon: 8.6821 },
+    serverCount: 14,
+  },
+  {
+    id: "azure-uksouth",
+    provider: "Azure",
+    name: "UK South",
+    code: "uksouth",
+    location: { lat: 51.5074, lon: -0.1278 },
+    serverCount: 11,
+  },
+  {
+    id: "azure-koreacentral",
+    provider: "Azure",
+    name: "Korea Central",
+    code: "koreacentral",
+    location: { lat: 37.5665, lon: 126.978 },
+    serverCount: 9,
+  },
+];
+
+export const providerColors = {
+  AWS: "#FF9900",
+  GCP: "#4285F4",
+  Azure: "#0078D4",
+};
+
+export const latencyColors = {
+  low: "#10b981",
+  medium: "#f59e0b",
+  high: "#ef4444",
+};

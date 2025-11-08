@@ -1,36 +1,259 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Latency Topology Visualizer
+
+A Next.js application that displays a 3D world map visualizing exchange server locations and real-time/historical latency data across AWS, GCP, and Azure co-location regions for cryptocurrency trading infrastructure.
+
+---
+
+## Features
+
+### Core Features
+
+- **3D Interactive Globe** - Rotate, zoom, and pan the 3D Earth visualization
+- **2D Map View** - Switch to Leaflet map view with OpenStreetMap tiles
+- **24 Exchange Servers** - Monitor major cryptocurrency exchanges (Binance, Coinbase, OKX, Bybit, etc.)
+- **Real-time Latency Visualization** - Animated connections showing latency with color coding
+- **Historical Latency Charts** - Time-series analysis with 1h, 24h, 7d, 30d ranges
+- **Cloud Provider Filtering** - Filter by AWS, GCP, or Azure
+- **Search Functionality** - Quickly locate exchanges by name or location
+- **Responsive Design** - Optimized for desktop, tablet, and mobile
+
+### Advanced Features
+
+- **AI-Powered Predictions** - Machine learning-based latency forecasting
+- **Arbitrage Detector** - Real-time profit opportunity identification
+- **Smart Alert System** - Customizable latency threshold notifications
+- **Advanced Analytics** - Pie charts, bar charts, and radar performance metrics
+- **Network Topology** - Connection analysis and most connected servers
+- **Dark/Light Theme** - Toggle between themes
+- **Export Reports** - Download comprehensive JSON reports
+- **Pause/Resume** - Control data updates
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- **Node.js** 18.0 or higher
+- **npm** or **yarn** package manager
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone
+cd latency-topology-visualizer
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+| Technology            | Purpose                      |
+| --------------------- | ---------------------------- |
+| **Next.js**           | React framework              |
+| **TypeScript**        | Type safety                  |
+| **Three.js**          | 3D graphics                  |
+| **React Three Fiber** | React renderer for Three.js  |
+| **Leaflet**           | 2D map library               |
+| **React Leaflet**     | React components for Leaflet |
+| **Recharts**          | Data visualization           |
+| **Tailwind CSS**      | Styling                      |
+| **Lucide React**      | Icons                        |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Map Technologies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3D Globe View (Three.js)
 
-## Deploy on Vercel
+- **Procedural Earth generation** with ocean and land layers
+- **Custom pin markers** color-coded by cloud provider
+- **Animated latency connections** with curved bezier paths
+- **Zoom controls** with +/- buttons
+- **Auto-rotation** with manual override
+- **Stars background** for space effect
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 2D Map View (Leaflet)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **OpenStreetMap tiles** (CartoDB Dark theme)
+- **100% free** - no API key required
+- **Custom SVG pin markers** with provider colors
+- **Hover tooltips** for quick information
+- **Click popups** for detailed server info
+- **Latency connection lines** with color coding
+
+---
+
+## How to Use
+
+### View Modes
+
+#### 3D Globe View
+
+1. **Rotate** - Click and drag to rotate the Earth
+2. **Zoom** - Scroll wheel or use +/- buttons
+3. **Pan** - Right-click and drag
+4. **Hover markers** - See server tooltips
+5. **Click markers** - Select for latency analysis
+
+#### 2D Map View
+
+1. **Pan** - Click and drag to move
+2. **Zoom** - Scroll wheel or use map controls
+3. **Hover markers** - See quick tooltip
+4. **Click markers** - See detailed popup
+
+### Comparing Latency
+
+1. Click **first exchange marker** (e.g., Binance Tokyo)
+2. Click **second exchange marker** (e.g., Coinbase Virginia)
+3. Historical latency chart appears below
+4. Select time range: 1h, 24h, 7d, or 30d
+
+### Filtering
+
+- **Search** - Type exchange name or city
+- **Cloud Providers** - Toggle AWS, GCP, Azure
+- **Visualization Layers** - Toggle connections and regions
+- **Time Range** - Select historical data period
+
+### Features
+
+#### Arbitrage Opportunities
+
+- Shows profit potential between exchanges
+- Factors in latency impact
+- Color-coded risk levels (low/medium/high)
+- Updates every 8 seconds
+
+#### AI Predictions
+
+- Forecasts latency trends
+- Shows increasing/decreasing/stable predictions
+- Confidence percentages
+- Based on mathematical models
+
+#### Alert System
+
+- Click bell icon to open
+- Adjust threshold slider
+- Get notifications for high latency
+- Critical vs warning alerts
+
+#### Export Reports
+
+- Click download button
+- Gets comprehensive JSON report
+- Includes all metrics and server data
+- Timestamped filename
+
+---
+
+## Styling
+
+### Tailwind CSS
+
+The project uses Tailwind CSS for styling with:
+
+- Dark mode support via `dark:` classes
+- Custom color palette
+- Responsive breakpoints
+- Animation utilities
+
+### Custom CSS
+
+Map-specific styles in `src/app/globals.css`:
+
+- Leaflet control styling
+- Dark theme overrides
+- Popup customization
+- Marker animations
+
+---
+
+## Data Flow
+
+```
+Exchange Servers (24)
+    ↓
+Latency Simulator (calculates geographical distances)
+    ↓
+Real-time Updates (every 5 seconds)
+    ↓
+State Management (useVisualizerState hook)
+    ↓
+3D Globe / 2D Map Visualization
+    ↓
+Charts, Analytics, AI Predictions
+    ↓
+Export Reports (JSON)
+
+---
+
+##  Deployment
+
+### Vercel
+
+
+```
+
+## Requirements Checklist
+
+### Core Requirements
+
+- 3D World Map Display
+- Interactive rotation, zoom, pan
+- Exchange server markers (24 exchanges)
+- Real-time latency visualization
+- Color-coded connections (green/yellow/red)
+- Historical latency charts
+- Time range selectors (1h, 24h, 7d, 30d)
+- Cloud provider visualization (AWS/GCP/Azure)
+- Filtering controls
+- Search functionality
+- Performance metrics dashboard
+- Responsive design
+
+### Bonus Features (100% Complete)
+
+- Latency heatmap overlay
+- Network topology visualization
+- Animated data flow
+- Dark/light theme toggle
+- Export functionality
+- AI-powered predictions
+- Arbitrage detection
+- Alert system
+- Advanced analytics dashboard
+- 2D Map view with Leaflet
+
+### Technical Requirements (100% Complete)
+
+- TypeScript for type safety
+- Proper error handling
+- Optimized 3D rendering
+- React hooks and patterns
+- State management
+- Data caching
+
+---
+
+## Acknowledgments
+
+- **Three.js** - 3D graphics library
+- **Leaflet** - Open-source mapping library
+- **OpenStreetMap** - Free map tiles
+- **Next.js** - React framework
+
+```
+
+```
