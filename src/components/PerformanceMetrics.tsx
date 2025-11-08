@@ -1,7 +1,7 @@
 "use client";
 
 import { Activity, Zap, Server, TrendingUp } from "lucide-react";
-import { LatencyData } from "@/types";
+import { LatencyData } from "../types";
 import { useMemo, useState, useEffect } from "react";
 
 interface PerformanceMetricsProps {
