@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Theme } from "@/types";
+import { Theme } from "../types";
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>("dark");
